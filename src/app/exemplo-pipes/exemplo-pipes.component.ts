@@ -25,4 +25,8 @@ export class ExemploPipesComponent implements OnInit {
   ngOnInit() {
   }
 
+  addCurso(curso: string) {
+    this.cursos.push(curso);
+  }
+
 }

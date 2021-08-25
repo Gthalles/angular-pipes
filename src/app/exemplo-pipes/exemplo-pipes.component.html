@@ -12,13 +12,15 @@
 
   <br>
 
-  <input type="text" ([ngModel])="filtro">
+  <br>
+  <input type="text" #novoValor>
+  <button (click)="addCurso(novoValor.value)">Adicionar curso</button>
+  <br>
+  <input type="text" [(ngModel)]="filtro">
 
   <ul>
     <h5>Filter Pipe</h5>
-    <li *ngFor="let curso of cursos | filtroArray:filtro">
-      {{ curso }}
-    </li>
+    <li *ngFor="let curso of cursos | filtroArray:filtro">{{ curso }}</li>
   </ul>
 </div>
 
