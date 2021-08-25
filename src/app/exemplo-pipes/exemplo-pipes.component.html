@@ -9,4 +9,16 @@
   <img [src]="livro.url" alt="">
   <br><br>
   <pre>{{ livro | json }}</pre>
+
+  <br>
+
+  <input type="text" ([ngModel])="filtro">
+
+  <ul>
+    <h5>Filter Pipe</h5>
+    <li *ngFor="let curso of cursos | filtroArray:filtro">
+      {{ curso }}
+    </li>
+  </ul>
 </div>
+

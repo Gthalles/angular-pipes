@@ -16,6 +16,9 @@ export class ExemploPipesComponent implements OnInit {
     url: 'https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/_5c8cf2c0bf670bbaa656e0f65e89ced7cd5bf781.jpg'
   };
 
+  cursos: string[] = ['Angular', 'Java', 'Thalles'];
+  filtro: string;
+
   // Métodos
   constructor() { }
 
