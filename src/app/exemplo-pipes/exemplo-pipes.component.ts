@@ -18,7 +18,7 @@ export class ExemploPipesComponent implements OnInit {
     url: 'https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/_5c8cf2c0bf670bbaa656e0f65e89ced7cd5bf781.jpg'
   };
 
-  cursos: string[] = ['Angular', 'Java', 'Thalles'];
+  cursos: string[] = ['Angular', 'Java', 'NodeJS', 'Ionic', 'PostgreSQL', 'MongoDB'];
   filtro: string;
 
   // Métodos
@@ -36,6 +36,19 @@ export class ExemploPipesComponent implements OnInit {
 
   addCurso(curso: string) {
     this.cursos.push(curso);
+  }
+
+  obterCurso() {
+    if(this.cursos.length === 0 || this.filtro === undefined || this.filtro.trim() === '') {
+      return this.cursos;
+    }
+
+    return this.cursos.filter((v) => {
+      if(v.toLocaleLowerCase().indexOf(this.filtro.toLowerCase()) >= 0) {
+        return true;
+      }
+    return false;
+    })
   }
 
 }

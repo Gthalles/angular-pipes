@@ -18,15 +18,25 @@
   <br>
   <input type="text" [(ngModel)]="filtro">
 
+  <p>{{ valorAsync | async }}</p>
+  <p>{{ valorAsync2 | async }}</p>
+  <p>{{ valorAsync3 | async }}</p>
+
+  <h5>Filtro puro</h5>
   <ul>
-    <h5>Filter Pipe</h5>
     <li *ngFor="let curso of cursos | filtroArray:filtro">{{ curso }}</li>
   </ul>
 
   <br>
 
-  <p>{{ valorAsync | async }}</p>
-  <p>{{ valorAsync2 | async }}</p>
-  <p>{{ valorAsync3 | async }}</p>
+  <h5>Filtro impuro</h5>
+  <ul>
+    <li *ngFor="let curso of cursos | filtroArrayImpuro:filtro">{{ curso }}</li>
+  </ul>
+
+  <h5>Maneira correta de utilizar filtros</h5>
+  <ul>
+    <li *ngFor="let curso of obterCurso()">{{ curso }}</li>
+  </ul>
 </div>
 
